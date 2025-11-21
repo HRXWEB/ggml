@@ -577,8 +577,8 @@ extern "C" {
 
     // ggml object
     struct ggml_object {
-        size_t offs;
-        size_t size;
+        size_t offs; // 偏移量，表示该对象在内存中的位置
+        size_t size; // 大小，表示该「对象结构体+对象数据」占用的内存大小，内存排布为： |ggml_object|ggml_tensor/ggml_graph/ggml_work_buffer|object_data|
 
         struct ggml_object * next;
 
